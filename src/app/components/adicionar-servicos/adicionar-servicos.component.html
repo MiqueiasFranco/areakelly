@@ -1,0 +1,25 @@
+<main>
+    <form action="">
+        <input type="text" name="nome" [(ngModel)]="nome" placeholder="Nome do Serviço">
+        <input type="text" name="duracao" [(ngModel)]="duracao" placeholder="Duração">
+        <input type="text" name="valor" [(ngModel)]="valor" placeholder="valor do Serviço">
+        <button (click)="cadastrarServico()" > Criar Serviço </button>
+    </form>
+    <label>Serviços Existentes</label>
+    <table>
+        <thead>
+            <tr>
+                <th>Serviços</th>
+                <th>Duração</th>
+                <th>Valores $</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let servico of servicos$ | async" >
+                <td> {{ servico.nome }} </td>
+                <td> {{ servico.duracao }} </td>
+                <td> {{ servico.valor }} </td>
+            </tr>
+        </tbody>
+    </table>
+</main>
